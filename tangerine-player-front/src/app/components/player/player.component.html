@@ -1,0 +1,65 @@
+<div class="player">
+  <!-- Song Info -->
+  <div class="song-info" *ngIf="currentSong.id">
+    <img [src]="currentSong.image" [alt]="currentSong.title">
+    <div class="song-details">
+      <div class="song-title">{{currentSong.title}}</div>
+      <div class="song-artist">{{currentSong.artist}}</div>
+    </div>
+  </div>
+  <div class="song-info empty" *ngIf="!currentSong.id">
+    <div class="song-details">
+      <div class="song-title">No hay canción seleccionada</div>
+    </div>
+  </div>
+
+  <!-- Player Controls -->
+  <div class="player-controls">
+    <div class="control-buttons">
+      <button class="control-button" (click)="playPrevious()" [disabled]="!currentSong.id">
+        <mat-icon>skip_previous</mat-icon>
+      </button>
+      <button class="control-button play-button" (click)="togglePlay()" [disabled]="!currentSong.id">
+        <mat-icon *ngIf="!isPlaying">play_arrow</mat-icon>
+        <mat-icon *ngIf="isPlaying">pause</mat-icon>
+      </button>
+      <button class="control-button" (click)="playNext()" [disabled]="!currentSong.id">
+        <mat-icon>skip_next</mat-icon>
+      </button>
+      <button class="control-button" (click)="openAddToPlaylistModal()" [disabled]="!currentSong.id">
+        <mat-icon>playlist_add</mat-icon>
+      </button>
+    </div>
+    <div class="progress-container">
+      <span class="time">{{currentSong.currentTime}}</span>
+      <div class="progress-bar" (click)="seek($event)" [class.disabled]="!currentSong.id">
+        <div class="progress" [style.width.%]="currentSong.progress"></div>
+      </div>
+      <span class="time">{{currentSong.duration}}</span>
+    </div>
+  </div>
+
+  <!-- Volume Control -->
+  <div class="volume-control">
+    <mat-icon>volume_up</mat-icon>
+    <input 
+      type="range" 
+      min="0" 
+      max="100" 
+      [value]="volume" 
+      (input)="updateVolume($event)"
+      class="volume-slider"
+      [disabled]="!currentSong.id"
+    >
+  </div>
+
+  <!-- Add to Playlist Modal -->
+  <app-add-to-playlist-modal
+    *ngIf="showAddToPlaylistModal"
+    [playlists]="playlists"
+    [songTitle]="currentSong.title"
+    [songId]="currentSong.id"
+    (close)="closeAddToPlaylistModal()"
+    (add)="addToPlaylists($event)"
+  ></app-add-to-playlist-modal>
+</div>

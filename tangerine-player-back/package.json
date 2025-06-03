@@ -1,0 +1,31 @@
+{
+  "name": "mangoplayerbackend",
+  "version": "1.0.0",
+  "main": "src/app.ts",
+  "type": "module",
+  "scripts": {
+    "watch": "npm run tsc",
+    "tsc": "tsc",
+    "seed": "node seed/seed.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.11.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.0",
+    "nodemon": "^2.0.21"
+  },
+  "devDependencies": {
+    "prisma": "^4.12.0"
+  },
+  "description": ""
+}

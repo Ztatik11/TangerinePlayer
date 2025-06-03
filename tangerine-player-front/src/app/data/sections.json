@@ -1,0 +1,34 @@
+{
+  "sections": [
+    {
+      "title": "Tus playlists más escuchadas",
+      "items": [
+        { "id": "1", "name": "Mix Diario 1", "image": "https://picsum.photos/seed/playlist1/300/300", "description": "Tu mix personalizado de hoy" },
+        { "id": "2", "name": "Mix Diario 2", "image": "https://picsum.photos/seed/playlist2/300/300", "description": "Basado en tu historial" },
+        { "id": "3", "name": "Mix Diario 3", "image": "https://picsum.photos/seed/playlist3/300/300", "description": "Nuevos descubrimientos" },
+        { "id": "4", "name": "Mix Diario 4", "image": "https://picsum.photos/seed/playlist4/300/300", "description": "Artistas que te gustan" },
+        { "id": "5", "name": "Mix Diario 5", "image": "https://picsum.photos/seed/playlist5/300/300", "description": "Lo mejor de tu semana" }
+      ]
+    },
+    {
+      "title": "Rock",
+      "items": [
+        { "id": "6", "name": "Rock Clásico", "image": "https://picsum.photos/seed/rock1/300/300", "description": "Los mejores clásicos" },
+        { "id": "7", "name": "Rock Alternativo", "image": "https://picsum.photos/seed/rock2/300/300", "description": "Lo mejor del rock alternativo" },
+        { "id": "8", "name": "Rock en Español", "image": "https://picsum.photos/seed/rock3/300/300", "description": "Rock en tu idioma" },
+        { "id": "9", "name": "Metal", "image": "https://picsum.photos/seed/rock4/300/300", "description": "Heavy y más" },
+        { "id": "10", "name": "Punk Rock", "image": "https://picsum.photos/seed/rock5/300/300", "description": "Actitud punk" }
+      ]
+    },
+    {
+      "title": "Pop",
+      "items": [
+        { "id": "11", "name": "Pop Latino", "image": "https://picsum.photos/seed/pop1/300/300", "description": "Los hits latinos" },
+        { "id": "12", "name": "Pop 2024", "image": "https://picsum.photos/seed/pop2/300/300", "description": "Lo nuevo del pop" },
+        { "id": "13", "name": "Pop Internacional", "image": "https://picsum.photos/seed/pop3/300/300", "description": "Éxitos globales" },
+        { "id": "14", "name": "Pop Español", "image": "https://picsum.photos/seed/pop4/300/300", "description": "Pop en español" },
+        { "id": "15", "name": "Pop Indie", "image": "https://picsum.photos/seed/pop5/300/300", "description": "Descubre nuevos artistas" }
+      ]
+    }
+  ]
+}

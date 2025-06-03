@@ -1,0 +1,10 @@
+<div class="playlist-card" (click)="openPlaylist()">
+  <div class="playlist-image">
+    <img [src]="playlist.image" [alt]="playlist.name">
+    <button class="play-button" (click)="playPlaylist($event)">
+      <mat-icon>play_arrow</mat-icon>
+    </button>
+  </div>
+  <h3>{{playlist.name}}</h3>
+  <p *ngIf="playlist.description">{{playlist.description}}</p>
+</div>

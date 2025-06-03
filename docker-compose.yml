@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: tangerin_player
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tangerin_player
+    ports:
+      - "3306:3306"
+    networks:
+      - appnet
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build: ./tangerine-player-back
+    depends_on:
+      - mysql
+    environment:
+      DATABASE_URL: mysql://root:root@mysql:3306/tangerin_player
+    ports:
+      - "3000:3000"
+    networks:
+      - appnet
+    command: >
+      sh -c "
+        until nc -z mysql 3306; do echo '⏳ Esperando MySQL...'; sleep 2; done &&
+        npx prisma generate &&
+        npx prisma migrate dev --name init &&
+        npm run seed &&
+        npm run dev
+      "
+
+  frontend:
+    build: ./tangerine-player-front
+    ports:
+      - "4200:80"
+    networks:
+      - appnet
+    depends_on:
+      - backend
+
+networks:
+  appnet:
+    external: true
+    
+volumes:
+  mysql_data:

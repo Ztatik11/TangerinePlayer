@@ -1,0 +1,9 @@
+.section-header {
+    margin-bottom: 1rem;
+}
+  
+  .section-header h2 {
+    color: #FFF;
+    font-size: 1.5rem;
+    font-weight: bold;
+}

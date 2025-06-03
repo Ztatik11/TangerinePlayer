@@ -1,0 +1,34 @@
+{
+  "songs": [
+    {
+      "id": "1",
+      "title": "Midnight Dreams",
+      "artist": "Luna Eclipse",
+      "album": "Nocturnal Journey",
+      "duration": "3:45",
+      "coverUrl": "https://picsum.photos/seed/song1/300/300",
+      "audioUrl": "/assets/audio/midnight-dreams.mp3",
+      "genre": "Indie Electronic"
+    },
+    {
+      "id": "2",
+      "title": "Urban Sunset",
+      "artist": "The City Lights",
+      "album": "Metropolitan",
+      "duration": "4:12",
+      "coverUrl": "https://picsum.photos/seed/song2/300/300",
+      "audioUrl": "/assets/audio/urban-sunset.mp3",
+      "genre": "Alternative Rock"
+    },
+    {
+      "id": "3",
+      "title": "Desert Wind",
+      "artist": "Nomad Soul",
+      "album": "Wanderlust",
+      "duration": "5:03",
+      "coverUrl": "https://picsum.photos/seed/song3/300/300",
+      "audioUrl": "/assets/audio/desert-wind.mp3",
+      "genre": "World Fusion"
+    }
+  ]
+}

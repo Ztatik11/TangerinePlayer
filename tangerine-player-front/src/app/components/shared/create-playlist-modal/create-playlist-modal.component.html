@@ -1,0 +1,29 @@
+<div class="modal-overlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Crear nueva playlist</h2>
+      <button class="close-button" (click)="onClose()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div class="modal-body">
+      <input 
+        type="text" 
+        [(ngModel)]="playlistName" 
+        (ngModelChange)="onInputChange()"
+        placeholder="Nombre de la playlist"
+        class="playlist-input"
+      >
+      <p class="error-message" *ngIf="errorMessage">{{errorMessage}}</p>
+    </div>
+    <div class="modal-footer">
+      <button 
+        class="create-button" 
+        (click)="onCreate()"
+        [disabled]="!playlistName.trim()"
+      >
+        Crear Lista
+      </button>
+    </div>
+  </div>
+</div>

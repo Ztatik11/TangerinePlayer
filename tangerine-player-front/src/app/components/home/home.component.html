@@ -1,0 +1,11 @@
+<div class="home-container" [class.sidebar-active]="isSidebarOpen">
+  <section class="carousel-section" *ngFor="let section of sections">
+    <app-section-header [title]="section.title"></app-section-header>
+    <div class="carousel">
+      <app-playlist-card 
+        *ngFor="let item of section.items"
+        [playlist]="item">
+      </app-playlist-card>
+    </div>
+  </section>
+</div>

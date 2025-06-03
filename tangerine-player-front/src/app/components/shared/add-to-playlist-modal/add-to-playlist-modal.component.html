@@ -1,0 +1,37 @@
+<div class="modal-overlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Añadir "{{songTitle}}" a playlists</h2>
+      <button class="close-button" (click)="onClose()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="playlists-list">
+        <div 
+          *ngFor="let playlist of playlists" 
+          class="playlist-item"
+          [class.selected]="isSelected(playlist.id)"
+          (click)="togglePlaylist(playlist.id)"
+        >
+          <div class="playlist-info">
+            <img [src]="playlist.coverUrl" [alt]="playlist.name">
+            <span class="playlist-name">{{playlist.name}}</span>
+          </div>
+          <mat-icon class="check-icon" *ngIf="isSelected(playlist.id)">check</mat-icon>
+        </div>
+      </div>
+      <p class="error-message" *ngIf="errorMessage">{{errorMessage}}</p>
+    </div>
+    <div class="modal-footer">
+      <button class="cancel-button" (click)="onClose()">Cancelar</button>
+      <button 
+        class="add-button" 
+        [disabled]="selectedPlaylists.size === 0"
+        (click)="onAdd()"
+      >
+        Añadir
+      </button>
+    </div>
+  </div>
+</div>

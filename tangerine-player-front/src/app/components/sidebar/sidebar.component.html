@@ -1,0 +1,39 @@
+<button class="menu-toggle" (click)="toggleSidebar()">
+  <mat-icon>menu</mat-icon>
+</button>
+
+<div class="sidebar" [class.active]="isSidebarOpen">
+  <div class="user-profile">
+    <img [src]="user.profilePic" alt="Profile picture">
+    <h3>{{user.name}}</h3>
+  </div>
+
+  <button class="add-playlist-btn" (click)="addPlaylist()">
+    + Añadir Playlist
+  </button>
+
+  <div class="playlists-container">
+    <h4>Tus Playlists</h4>
+    <div class="playlists-list">
+      <div class="playlist-item" *ngFor="let playlist of playlists" (click)="openPlaylist(playlist.id)">
+        <div class="playlist-name">{{playlist.name}}</div>
+        <button class="more-options" (click)="toggleOptions(playlist.id, $event)">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <div class="options-menu" *ngIf="activeOptionsMenu === playlist.id">
+          <div class="menu-item delete" (click)="deletePlaylist(playlist.id)">
+            <mat-icon>delete</mat-icon>
+            Eliminar
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-create-playlist-modal
+  *ngIf="showCreatePlaylistModal"
+  [errorMessage]="errorMessage"
+  (close)="onCloseModal()"
+  (create)="onCreatePlaylist($event)"
+></app-create-playlist-modal>

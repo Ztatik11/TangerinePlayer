@@ -1,0 +1,136 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #282828;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  padding: 24px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: white;
+  font-size: 24px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.close-button:hover {
+  color: white;
+}
+
+.playlists-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.playlist-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.playlist-item:hover {
+  background-color: #333;
+}
+
+.playlist-item.selected {
+  background-color: rgba(255, 107, 0, 0.2);
+}
+
+.playlist-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.playlist-info img {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+}
+
+.playlist-name {
+  color: white;
+  font-size: 16px;
+}
+
+.check-icon {
+  color: #FF6B00;
+}
+
+.error-message {
+  color: #ff4444;
+  margin-top: 12px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cancel-button, .add-button {
+  padding: 12px 24px;
+  border-radius: 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #404040;
+}
+
+.cancel-button:hover {
+  border-color: white;
+}
+
+.add-button {
+  background-color: #FF6B00;
+  color: white;
+}
+
+.add-button:hover {
+  background-color: #FF8533;
+}
+
+.add-button:disabled {
+  background-color: #404040;
+  cursor: not-allowed;
+}

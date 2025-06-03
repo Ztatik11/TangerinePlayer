@@ -1,0 +1,28 @@
+{
+  "genres": [
+    {
+      "id": "1",
+      "name": "Chill Vibes",
+      "description": "Perfect for relaxing moments",
+      "coverUrl": "https://picsum.photos/seed/playlist1/300/300",
+      "createdBy": "user123",
+      "songs": ["1", "3"]
+    },
+    {
+      "id": "2",
+      "name": "Electronic Dreams",
+      "description": "Electronic beats for your journey",
+      "coverUrl": "https://picsum.photos/seed/playlist2/300/300",
+      "createdBy": "user123",
+      "songs": ["2", "3"]
+    },
+    {
+      "id": "3",
+      "name": "Indie Mix",
+      "description": "Best independent artists",
+      "coverUrl": "https://picsum.photos/seed/playlist3/300/300",
+      "createdBy": "user123",
+      "songs": ["1", "2"]
+    }
+  ]
+}

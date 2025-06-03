@@ -1,0 +1,78 @@
+.home-container {
+  margin-left: 0;
+  padding: 80px 2rem 120px 2rem;
+  background: linear-gradient(180deg, #2D1600 0%, #121212 100%);
+  min-height: 100vh;
+  color: white;
+  transition: margin-left 0.3s ease;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.home-container.sidebar-active {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+}
+
+.carousel-section {
+  margin-bottom: 2.5rem;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carousel::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background: #FF6B00;
+  border-radius: 4px;
+}
+
+.carousel::-webkit-scrollbar-thumb:hover {
+  background: #FF8533;
+}
+
+.carousel > * {
+  flex: 0 0 200px;
+  max-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .home-container.sidebar-active {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .home-container {
+    padding: 80px 1rem 120px 1rem;
+  }
+
+  .carousel > * {
+    flex: 0 0 160px;
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 100px 1rem 140px 1rem;
+  }
+
+  .carousel > * {
+    flex: 0 0 140px;
+    max-width: 140px;
+  }
+}
