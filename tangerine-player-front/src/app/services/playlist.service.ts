@@ -24,14 +24,14 @@ export class PlaylistService {
       .set('Content-Type', 'application/json')
       .set('Access-Control-Allow-Origin', '*');
 
-    this.http.post<Playlist[]>(`${this.apiUrl}/user`, {
+    this.http.post<{ playlists: Playlist[] }>(`${this.apiUrl}/user`, {
       ID_Usuario: this.userId
     }, { 
       headers,
       withCredentials: false
     }).pipe(
-      tap(playlists => console.log('Playlists cargadas:', playlists)),
-      map(playlists => this.sortPlaylists(playlists)),
+      tap(response => console.log('Playlists cargadas:', response)),
+      map(response => this.sortPlaylists(response.playlists)),
       catchError(error => {
         console.error('Error al obtener playlists:', error);
         return of([]);
